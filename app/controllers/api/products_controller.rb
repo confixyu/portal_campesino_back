@@ -1,7 +1,12 @@
 module Api
 	class ProductsController < ApiController
-		
+		skip_before_action :authorized, only: [:index]
+
 		def index
+			render json: { data: Product.all }
+		end
+
+		def list_by_user
 			render json: { data: @user.products }
 		end
 
@@ -18,7 +23,6 @@ module Api
 
 		def product_params
 			params.require(:product).permit(:name, :description, :price, :quantity)
-	end
-		
+		end
 	end
 end

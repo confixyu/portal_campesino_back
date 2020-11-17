@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
     resource :user, controller: 'user'
     resources :products, controller: 'products'
+    resources :purchases, controller: 'purchases'
   end
 end

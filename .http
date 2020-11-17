@@ -49,9 +49,33 @@ Authorization: {{token}}
 {
     "product": {
         "name": "Papas Criollas",
-        "description": "",
-        "image_url": "",
+        "description": "Papa sembrado de la montaña milenaria",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Papacriollacolombiana.jpg",
         "price": 1000,
         "quantity": 50
+    }
+}
+
+###
+
+GET {{local}}/api/purchases
+Content-Type: application/json
+
+
+####
+
+
+POST {{local}}/api/purchases
+Content-Type: application/json
+
+{
+    "purchase": {
+        "product_id": 1,
+        "quantity": 5,
+        "client_name": "John Doe",
+        "address": "St Fake 123",
+        "state": 1,
+        "city": 5,
+        "transport_cost": 10000
     }
 }
