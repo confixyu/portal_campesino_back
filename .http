@@ -1,0 +1,21 @@
+@local=http://localhost:3000
+@token=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOjF9.ZgjRmwzGCxIMW38wenUR0R9Y9bc8_KRd5eP0WvgkeRA
+
+####
+
+GET {{local}}/api/user
+Content-Type: application/json
+Authorization: {{token}}
+
+
+####
+
+POST {{local}}/api/sign_in
+Content-Type: application/json
+
+{
+    "user": {
+        "email": "hola2@gmail.com",
+        "password": "Password123!"
+    }
+}
