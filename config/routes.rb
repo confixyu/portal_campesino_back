@@ -3,5 +3,6 @@ Rails.application.routes.draw do
     post :sign_in, to: 'sessions#create'
 
     resource :user, controller: 'user'
+    resources :products, controller: 'products'
   end
 end

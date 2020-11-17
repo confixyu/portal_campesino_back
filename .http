@@ -1,4 +1,5 @@
 @local=http://localhost:3000
+@heroku=https://portal-de-campesinos-back.herokuapp.com
 @token=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOjF9.ZgjRmwzGCxIMW38wenUR0R9Y9bc8_KRd5eP0WvgkeRA
 
 ####
@@ -17,5 +18,40 @@ Content-Type: application/json
     "user": {
         "email": "hola2@gmail.com",
         "password": "Password123!"
+    }
+}
+
+#####
+
+POST {{local}}/api/user
+Content-Type: application/json
+
+{
+    "user": {
+        "email": "hola2@gmail.com",
+        "password": "Password123!",
+        "password_Confirmation": "Password123!"
+    }
+}
+
+####
+
+GET {{local}}/api/products
+Content-Type: application/json
+Authorization: {{token}}
+
+###
+
+POST {{local}}/api/products
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "product": {
+        "name": "Papas Criollas",
+        "description": "",
+        "image_url": "",
+        "price": 1000,
+        "quantity": 50
     }
 }

@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-	has_secure_password
+  has_secure_password
+
+  has_many :products, dependent: :delete_all
 
 	PASSWORD_FORMAT = /\A
   (?=.{8,})          # Must contain 8 or more characters
