@@ -36,31 +36,30 @@ Content-Type: application/json
 
 ####
 
-GET {{heroku}}/api/products
+GET {{local}}/api/products
 Content-Type: application/json
-Authorization: {{token}}
 
 ###
 
-POST {{local}}/api/products
+POST {{heroku}}/api/products
 Content-Type: application/json
-Authorization: {{token}}
+Authorization: {{token_heroku}}
 
 {
     "product": {
-        "name": "Papas Criollas",
-        "description": "Papa sembrado de la montaña milenaria",
-        "img_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Papacriollacolombiana.jpg",
+        "name": "Guineo",
+        "description": "De los mejores bananos de la mejor zona bananera del Santader",
+        "img_url": "https://perfumesyfragancias.online/wp-content/uploads/2018/10/banane.jpg",
         "price": 1000,
-        "stock": 50,
+        "stock": 100,
         "farm": "valley",
         "price_per_pack": 2000,
-        "sku": "123456",
+        "sku": "675324",
         "freshness": 2,
-        "category": "Vegetales",
+        "category": "Fruta",
         "buy_by": "Kilos",
         "delivery": 2,
-        "delivery_area": "Bogota"
+        "delivery_area": "Santander"
     }
 }
 
