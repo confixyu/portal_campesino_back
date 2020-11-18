@@ -1,7 +1,7 @@
 @local=http://localhost:3000
 @heroku=https://portal-de-campesinos-back.herokuapp.com
 @token=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOjF9.ZgjRmwzGCxIMW38wenUR0R9Y9bc8_KRd5eP0WvgkeRA
-
+@token_heroku=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOjF9.JNQ7yCr-2iDXG8FQqfGgMNc8qiEKL1w_XPiKTkTXrfE
 ####
 
 GET {{local}}/api/user
@@ -11,7 +11,7 @@ Authorization: {{token}}
 
 ####
 
-POST {{local}}/api/sign_in
+POST {{heroku}}/api/sign_in
 Content-Type: application/json
 
 {
@@ -23,7 +23,7 @@ Content-Type: application/json
 
 #####
 
-POST {{local}}/api/user
+POST {{heroku}}/api/user
 Content-Type: application/json
 
 {
@@ -36,7 +36,7 @@ Content-Type: application/json
 
 ####
 
-GET {{local}}/api/products
+GET {{heroku}}/api/products
 Content-Type: application/json
 Authorization: {{token}}
 
@@ -50,15 +50,24 @@ Authorization: {{token}}
     "product": {
         "name": "Papas Criollas",
         "description": "Papa sembrado de la montaña milenaria",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Papacriollacolombiana.jpg",
+        "img_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Papacriollacolombiana.jpg",
         "price": 1000,
-        "quantity": 50
+        "stock": 50,
+        "farm": "valley",
+        "price_per_pack": 2000,
+        "sku": "123456",
+        "freshness": 2,
+        "category": "Vegetales",
+        "buy_by": "Kilos",
+        "delivery": 2,
+        "delivery_area": "Bogota"
     }
 }
 
+
 ###
 
-GET {{local}}/api/purchases
+GET {{heroku}}/api/purchases
 Content-Type: application/json
 
 

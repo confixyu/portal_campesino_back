@@ -9,6 +9,7 @@ module Api
 		def create
 			purchase = Purchase.create(purchase_params)
 			product = Product.find(purchase_params[:product_id])
+			
 			sub_total = product.price * purchase_params[:quantity]
 			purchase.sub_total = sub_total
 			new_quantity = product.quantity - purchase_params[:quantity]
